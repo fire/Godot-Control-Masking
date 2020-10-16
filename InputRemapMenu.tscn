@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ActionRemapButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://MaskedMaterial.tres" type="Material" id=2]
 [ext_resource path="res://MaskControl.gd" type="Script" id=3]
+[ext_resource path="res://grey.tres" type="Material" id=4]
 
 [sub_resource type="Animation" id=2]
 resource_name = "movearound"
@@ -188,21 +189,19 @@ group = SubResource( 1 )
 action = "crouch"
 
 [node name="ActionRemapRow5" type="HBoxContainer" parent="RemapButtonGroup/ActionsList"]
+material = ExtResource( 4 )
 margin_top = 227.0
 margin_right = 320.0
 margin_bottom = 280.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ActionName" type="Label" parent="RemapButtonGroup/ActionsList/ActionRemapRow5"]
-material = ExtResource( 2 )
+[node name="ActionName" type="ColorRect" parent="RemapButtonGroup/ActionsList/ActionRemapRow5"]
+material = ExtResource( 4 )
 margin_right = 158.0
 margin_bottom = 53.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Dash"
-align = 1
-valign = 1
 
 [node name="RemapButton" parent="RemapButtonGroup/ActionsList/ActionRemapRow5" instance=ExtResource( 1 )]
 material = ExtResource( 2 )

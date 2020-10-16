@@ -17,5 +17,9 @@ func update_child_materials(p_node, p_mat):
 			var control:Control = N
 			if control.material == null:
 				control.material = p_mat
-			elif control.material != p_mat:
-				control.material.next_pass = p_mat
+			elif control.material.next_pass and control.material.next_pass != p_mat:
+				recurse_next_pass(control.material)
+
+func recurse_next_pass(p_mat):
+	# TODO
+	pass
